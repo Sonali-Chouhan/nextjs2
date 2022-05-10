@@ -1,29 +1,29 @@
-function getPostApi(data){
-    // console.log("getPostapi",data)
+// function getPostApi(data){
+//     // console.log("getPostapi",data)
     
-    // const token = localStorage.getItem('user-token');
-    // console.log("user-token", token)
+//     // const token = localStorage.getItem('user-token');
+//     // console.log("user-token", token)
     
-    // const user_id = localStorage.getItem('user-id');
-    // console.log("user-id", user_id)
+//     // const user_id = localStorage.getItem('user-id');
+//     // console.log("user-id", user_id)
     
-    const body = {
-    "post":{
-    "title":data.title,
-    "description":data.description,
-    "user_id": user_id
-    }
-    }
-    return axios.request({
-    method:"POST",
-    headers : {
-    "Content-Type" : "application/json",
-    "Authorization": token
-    },
-    url:"https://react-rails-api-demo.herokuapp.com/api/v1/posts",
-    data:body
-    })
-    }
+//     const body = {
+//     "post":{
+//     "title":data.title,
+//     "description":data.description,
+//     "user_id": user_id
+//     }
+//     }
+//     return axios.request({
+//     method:"POST",
+//     headers : {
+//     "Content-Type" : "application/json",
+//     "Authorization": token
+//     },
+//     url:"https://react-rails-api-demo.herokuapp.com/api/v1/posts",
+//     data:body
+//     })
+//     }
     // const handelfathch = () =>{
     //     //   axios.get("https://jsonplaceholder.typicode.com/posts")
     //     //   .then((response) => {

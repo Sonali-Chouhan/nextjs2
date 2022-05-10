@@ -1,34 +1,56 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Table } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import DashBoard from "./DashBoard";
+import { UserList } from "../Redux/Action/Action1";
+import { useDispatch, useSelector } from "react-redux";
+
 const Usertable = () => {
-    
-  const data = [];
+
+  const dispatch=useDispatch();
+
+  const Record=useSelector((state)=>state?.reducer?.User?.data?.posts)
+
+  console.log("record",Record)
 
   const handleDelete = () => {};
 
   const handleShow = () => {};
 
+  useEffect(()=>{
+    dispatch(UserList());
+  },[])
+
   return (
     <div>
-      <Table>
+      <DashBoard/>
+       <h1>Table</h1>
+      <Table striped bordered hover variant="dark">
+       
         <thead>
           <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>#</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>User_Id</th>
+            <th>Created_At</th>
+            <th>Updated_At</th>
+            <th colSpan={2}>Action</th>
           </tr>
         </thead>
         <tbody>
-          {data.map((x, index) => {
+          {Record?.map((x, index) => {
             return (
               <tr key={index}>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{index}</td>
+                <td>{x.id}</td>
+                <td>{x.title}</td>
+                <td>{x.description}</td>
+                <td>{x.user_id}</td>
+                <td>{x.created_at}</td>
+                <td>{x.updated_at}</td>
+              
                 <td>
                   <Button onClick={() => handleDelete()}>Delete</Button>
                 </td>
